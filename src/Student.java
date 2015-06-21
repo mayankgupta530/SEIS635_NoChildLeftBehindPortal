@@ -1,7 +1,7 @@
 
 public class Student {
 
-    public static void recieveAlert() {
-        System.out.println("Alert Recieved by Student");
+    public static String recieveAlert() {
+        return("Alert Recieved by Student");
     }
 }

@@ -1,25 +1,21 @@
-import java.util.Scanner;
 public class GradeChecker {
 
-    public static void CheckGrade(){
-       Scanner scan = new Scanner(System.in);
-       int AssignmentID = 1;
-       int AssignmentGrade = 0;       
-       Assignment a1 = new Assignment(AssignmentID, AssignmentGrade);
-       
-       System.out.println("Enter Grade for Assignment number 123:");
-       a1.AssignmentGrade = scan.nextInt();
-       
-       if(a1.AssignmentGrade > 75){
-           System.out.println("Thank you, Grade Submitted");
+    public static String[] CheckGrade(int grade){
+ 
+        String[] returnMessages;
+        
+       if(grade > 75){
+           returnMessages = new String[1];
+           returnMessages[0]="Thank you, Grade Submitted";
+           return returnMessages;
        }
-       if(a1.AssignmentGrade <= 75){
-           if (a1.AssignmentGrade > 60)
-           Alert.sendAlert();
+       if(grade > 60 && grade <=75){
+           return Alert.sendAlert();
        }
-       if(a1.AssignmentGrade <= 60){
-           Alert.sendAdvisorAlert();
+       if(grade <= 60){
+           return Alert.sendAdvisorAlert();
        }
+    return null;
        
     }
 }

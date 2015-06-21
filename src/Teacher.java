@@ -1,8 +1,8 @@
 
 public class Teacher {
 
-    public static void recieveAlert() {
-        System.out.println("Alert Recieved by Teacher");
+    public static String recieveAlert() {
+        return("Alert Recieved by Teacher");
         
     }
 }

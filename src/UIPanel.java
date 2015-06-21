@@ -10,43 +10,45 @@ import javax.swing.JTextField;
 
 public class UIPanel extends JPanel{
 
-        private JLabel inputLabel, resultLabel, outputLabel;
+    private static final long serialVersionUID = 1L;
+        
+    private JLabel inputLabel, resultLabel;
         public JTextField grade;
 
         public UIPanel(){
             inputLabel = new JLabel("Enter Student Grade:");
-            outputLabel = new JLabel("Entered Grade");
             resultLabel = new JLabel("---");
             grade = new JTextField(3);
             grade.addActionListener(new GradeListener());
             
             add(inputLabel);
             add(grade);
-            add(outputLabel);
             add(resultLabel);
             
-            setPreferredSize(new Dimension(300,75));
+            setPreferredSize(new Dimension(666,75));
             setBackground(Color.magenta);
         }
         
-            private class GradeListener implements ActionListener {
+            public class GradeListener implements ActionListener {
 
                 public void actionPerformed(ActionEvent e) {
-                    int listenedgrade, result;
-                    
+                    int listenedgrade;
+                    String formattedAlert = "";
                     String text = grade.getText();
                     
                     listenedgrade = Integer.parseInt(text);
+                    String[] alertMessages = GradeChecker.CheckGrade(listenedgrade);
                     //We need to pass the listenedgrade to the GradeChecker class
-                    resultLabel.setText (Integer.toString(listenedgrade));
+                    for(int i=0; i<alertMessages.length-1; i++){
+                        formattedAlert = formattedAlert + alertMessages[i]+ ", ";
+                    }
+                    if (alertMessages.length >= 1){
+                        formattedAlert = formattedAlert + alertMessages[alertMessages.length-1];
+                    }
+               
+                    resultLabel.setText(formattedAlert);
                     
-
                 }
-
-            
-
-            
-            
         }
 }
 
