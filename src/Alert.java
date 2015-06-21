@@ -2,12 +2,15 @@
 public class Alert {
 
     public static void sendAlert() {
-        System.out.println("Alert sent to student and teacher!");
+        Teacher.recieveAlert();
+        Student.recieveAlert();
         AdditionalMaterials.sendAdditionalMaterials();
     }
     
     public static void sendAdvisorAlert() {
-        System.out.println("Alert sent to student, teacher, and advisor!");
+        Teacher.recieveAlert();
+        Student.recieveAlert();
+        Advisor.recieveAlert();
         AdditionalMaterials.sendAdditionalMaterials();
     }
     

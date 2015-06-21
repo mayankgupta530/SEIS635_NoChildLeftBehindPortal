@@ -1,8 +1,7 @@
 import java.util.Scanner;
 public class GradeChecker {
 
-    public static void main(String[] args)
-    {   
+    public static void CheckGrade(){
        Scanner scan = new Scanner(System.in);
        int AssignmentID = 1;
        int AssignmentGrade = 0;       
