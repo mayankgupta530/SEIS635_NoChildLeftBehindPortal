@@ -1,9 +1,10 @@
-import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 
 public class NoChildLeftBehindMain extends JFrame implements ActionListener{
@@ -19,7 +20,29 @@ public class NoChildLeftBehindMain extends JFrame implements ActionListener{
         setSize(600,600); //1024x768, 800x600
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new FlowLayout());
+        setLayout(new GridLayout());
+        
+        /*
+         * 
+         * FlowLayout
+         * GridBagLayout
+         * GridLayout
+         * BorderLayout
+         */
+        
+        final JTextField entergrade = new JTextField("");
+        JButton button3 = new JButton("Set Grade");
+        button3.setActionCommand("Grade");
+        button3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0){
+                String s2 = entergrade.getText();
+                
+                
+            }
+        });
+        
+        
+        add(entergrade);
         
         JButton button = new JButton("Click Me");
         button.setActionCommand("click");
@@ -28,8 +51,10 @@ public class NoChildLeftBehindMain extends JFrame implements ActionListener{
         button.addActionListener(this);
         button2.addActionListener(this);
         
+        
         add(button);
         add(button2);
+       
     }
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -15,10 +15,11 @@ public class GradeChecker {
            System.out.println("Thank you, Grade Submitted");
        }
        if(a1.AssignmentGrade <= 75){
-           System.out.println("Thank you for submitting grade, Alert sent to Teacher and Student");
+           if (a1.AssignmentGrade > 60)
+           Alert.sendAlert();
        }
        if(a1.AssignmentGrade <= 60){
-           System.out.println("Thank you for submitting grade, Alert sent to Teacher, Student, and Advisor");
+           Alert.sendAdvisorAlert();
        }
        
     }
